@@ -24,6 +24,8 @@ function LoginPage() {
                 localStorage.setItem('usertoken',data.token)
             setUser(data?.user)
             setRedirect(true)
+            }else {
+                setErr(data.message)
             }
 
 

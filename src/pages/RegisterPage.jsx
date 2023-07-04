@@ -21,7 +21,7 @@ function RegisterPage() {
             if(data.status==='success'){
              navigate('/login')
             }else{
-             return
+             setErr(data.message)
             }
 
 
