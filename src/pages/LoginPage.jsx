@@ -20,6 +20,7 @@ function LoginPage() {
 
             if(data.status==='success'){
                 console.log('successsss',data)
+                localStorage.setItem('usertoken',data.token)
             setUser(data?.user)
             setRedirect(true)
             }
