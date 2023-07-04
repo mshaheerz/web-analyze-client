@@ -8,7 +8,7 @@ export function UserContextProvider({children}){
     useEffect( ()=>{
         async function dd(){
             if(!user) {
-            const {data} = await axios.get('/profile');
+            const {data} = await axios.get('/profile',{Headers:{'usertoken':localStorage.getItem('usertoke')}});
             setUser(data);
             setReady(true);
         }
