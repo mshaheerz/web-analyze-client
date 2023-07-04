@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.styleh1 {
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+
+.spanstyle::before {
+    content: "Analysing";
+    animation: animate infinite 7s;
+    padding-left: 10px;
+}
+
+@keyframes animate {
+
+    0% {
+        content: "crawling";
+    }
+
+    50% {
+        content: "searching";
+    }
+
+    75% {
+        content: "finding";
+    }
+}
