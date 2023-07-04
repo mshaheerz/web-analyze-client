@@ -19,7 +19,7 @@ function TrackerPage() {
   const { ready, user } = useContext(UserContext);
 
 
-  if (ready && !user.email) {
+  if (ready && !user?.email) {
     return <Navigate to={'/login'} />
   }
 
