@@ -14,7 +14,7 @@ function TrackerPage() {
       setLogs(data.logs)
     })
   },[refresh])
-n
+
 
   const { ready, user } = useContext(UserContext);
 
