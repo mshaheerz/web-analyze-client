@@ -10,11 +10,11 @@ function TrackerPage() {
   const [refresh, setRefresh] = useState([])
 
   useEffect(()=>{
-    axios.get('/insight').then(({data})=>{
+    axios.get('/insight',{headers:{'usertoken':localStorage.getItem('usertoke')}}).then(({data})=>{
       setLogs(data.logs)
     })
   },[refresh])
-
+n
 
   const { ready, user } = useContext(UserContext);
 
