@@ -7,7 +7,7 @@ function TableContent({ logs,setRefresh,refresh }) {
 
    async function updateFav(fav,id){
         try {
-            await axios.patch(`/insight/${id}`,{fav})
+            await axios.patch(`/insight/${id}`,{fav},{headers:{'usertoken':localStorage.getItem('usertoken')}})
             setRefresh(!refresh)
         } catch (error) {
             console.log(error.message)
@@ -16,7 +16,7 @@ function TableContent({ logs,setRefresh,refresh }) {
 
     async function deleteData(id){
         try {
-            await axios.delete(`/insight/${id}`)
+            await axios.delete(`/insight/${id}`,{headers:{'usertoken':localStorage.getItem('usertoken')}})
             setRefresh(!refresh)
         } catch (error) {
             console.log(error.message)
