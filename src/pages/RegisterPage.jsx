@@ -7,6 +7,7 @@ function RegisterPage() {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [err, setErr]= useState('')
     const navigate = useNavigate()
 
     const registerHandler = async (e) => {
@@ -56,6 +57,7 @@ function RegisterPage() {
                             </div>
                             <div className="flex items-center justify-between">
                             </div>
+                            <p className="text-red-700">{err}</p>
                             <button disabled={email == '' || password == ''} type="submit" className="w-full text-white bg-gradient-to-r from-blue-600 to-pink-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign up</button>
                             <p className="text-sm font-light text-gray-500">
                                 Already an account ? <Link to={'/login'} className="font-medium text-primary-600 hover:underline ">Sign in</Link>
