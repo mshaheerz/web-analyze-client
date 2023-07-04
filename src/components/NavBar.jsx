@@ -28,6 +28,7 @@ function NavBar({current}) {
     
 async function logout() {
     await axios.post('/logout');
+    localStorage.removeItem('usertoken')
     setUser(null);
     navigate('/login')
   }
