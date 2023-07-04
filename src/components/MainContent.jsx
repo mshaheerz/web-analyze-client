@@ -10,7 +10,7 @@ function MainContent() {
     const navigate = useNavigate()
     async function submitHandler(){
        setLoding(true)
-        await axios.post('/insight',{url})
+        await axios.post('/insight',{url},{headers:{'usertoken':localStorage.getItem('usertoken')}})
         setLoding(false)
         navigate('/tracker')
     }
