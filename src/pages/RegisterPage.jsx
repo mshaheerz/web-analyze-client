@@ -1,14 +1,15 @@
-import { useState } from "react"
+import { useState,useContext } from "react"
 import { Link } from "react-router-dom"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
-
+import { UserContext } from "../userContext";
 function RegisterPage() {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [err, setErr]= useState('')
     const navigate = useNavigate()
+    const { user, setUser } = useContext(UserContext)
 
     const registerHandler = async (e) => {
         e.preventDefault();
@@ -19,7 +20,9 @@ function RegisterPage() {
 
             });
             if(data.status==='success'){
-             navigate('/login')
+             localStorage.setItem('usertoken',data.token)
+             setUser(data?.user)
+             navigate('/')
             }else{
              setErr(data.message)
             }
