@@ -31,7 +31,7 @@ function MainContent() {
                 
             </div>
             <div>
-               <input type="text" onChange={(e)=>setUrl(e.target.value)} value={url} placeholder="www.google.com" className=" border-2 border-gray-200 rounded w-full p-2" />  
+               <input type="text" onChange={(e)=>setUrl(e.target.value)} value={url} placeholder="www.samsung.com" className=" border-2 border-gray-200 rounded w-full p-2" />  
             </div>
 
             <div>
